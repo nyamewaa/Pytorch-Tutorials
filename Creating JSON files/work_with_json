@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct  7 17:42:25 2019
+
+@author: nyamewaa
+"""
+
+import json
+import os
+
+path ="~/chem/cxr-CheXNet-Keras/data/images" #want to include the path as a key
+with open('chesXNet_BBox.json','r') as f:
+    chesXNet_data = json.load(f)
+    
+#%% for this i wanted to include another key in the file, by taking the image index and adding ti onto the path string 
+#defined above
+for idx, data in enumerate(chesXNet_data):
+    img_path = os.path.join(path, data['Image Index']) 
+    data['img_path'] = img_path
+    chesXNet_data[idx] = data
+
+#%% dump back to .json file
+with open('chesXNet_BBox.json', 'w') as f:
+    json.dump(chesXNet_data, f)
+#%%
+#to parse any of the data from json, for example finding label
+data['Finding Label']

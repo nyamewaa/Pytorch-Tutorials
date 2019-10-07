@@ -7,8 +7,9 @@ Easy ways to create .json files with chesXNet as example
 """
 import csv
 import json
-csv_name = 'Data_Entry_2017.csv'; #put in the name of your csv
-csv_path = './csv_name' #if file is in a different directory you can replace csv_name with csv_path
+
+csv_name = 'BBox_List_2017.csv'; #put in the name of your csv
+csv_path = './csv_xx`x`name' #if file is in a different directory you can replace csv_name with csv_path
 json_path = './json'
 
 
@@ -17,13 +18,13 @@ with open(csv_name) as f:
     reader = csv.DictReader(f)
     rows = list(reader)
 
-with open('chesXNet1.json', 'w') as f:
+with open('chesXNet_BBox.json', 'w') as f:
     json.dump(rows, f)
     
 
 #%% Method 2
 csvfile = open(csv_name, 'r')
-jsonfile = open('chesXNet2.json', 'w')
+jsonfile = open('chesXNet3.json', 'w')
 
 #no field names needed since the header is on the first row in 
 #the file,otherwise this would have been specified as below
