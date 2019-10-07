@@ -19,7 +19,7 @@ with open(csv_name) as f:
     rows = list(reader)
 
 with open('chesXNet_BBox.json', 'w') as f:
-    json.dump(rows, f)
+    json.dump(rows, f, indent = 4)
     
 
 #%% Method 2

@@ -22,7 +22,7 @@ for idx, data in enumerate(chesXNet_data):
 
 #%% dump back to .json file
 with open('chesXNet_BBox.json', 'w') as f:
-    json.dump(chesXNet_data, f)
+    json.dump(chesXNet_data, f, indent = 4)
 #%%
 #to parse any of the data from json, for example finding label
 data['Finding Label']
